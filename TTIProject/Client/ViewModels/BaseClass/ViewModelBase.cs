@@ -1,9 +1,9 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace TTIProject.Client.ViewModels.BaseClass
+namespace ViewModels.BaseClass
 {
-    public class BaseViewModel : INotifyPropertyChanged
+    public class ViewModelBase : INotifyPropertyChanged
     {
         private bool isBusy = false;
         public bool IsBusy

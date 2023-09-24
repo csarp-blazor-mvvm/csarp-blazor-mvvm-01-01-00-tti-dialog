@@ -1,9 +1,10 @@
 ﻿using System.ComponentModel;
 using System.Reflection.Metadata.Ecma335;
+using ViewModels.BaseClass;
 
 namespace TTIProject.Models
 {
-    public class Beteg
+    public class Beteg : ViewModelBase
     {
         /// <summary>
         /// Beteg neve
@@ -34,19 +35,18 @@ namespace TTIProject.Models
         public string Nev
         {
             get => _nev;
-            set => _nev=value;
+            set => SetValue(ref _nev, value);
         }
-        public double Suly
+        public string Suly
         {
-            get => _suly;
-            set => _suly = value;
-            
+            get => _suly.ToString();
+            set => SetValue(ref _suly, Convert.ToDouble(value));
         }
 
-        public double Magassag
+        public string Magassag
         {
-            get => _magassag;
-            set => _magassag = value;
+            get => _magassag.ToString();
+            set => SetValue(ref _magassag, Convert.ToDouble(value));
         }
 
         /// <summary>
@@ -70,5 +70,11 @@ namespace TTIProject.Models
                 return $"{_nev} beteg testőmeg indexe:  {TTI}";
             }
         }
+
+        public void Compute()
+        {
+            OnPropertyChanged(nameof(TTI));
+            OnPropertyChanged(nameof(BetegAdatok));
+        }    
     }
 }
