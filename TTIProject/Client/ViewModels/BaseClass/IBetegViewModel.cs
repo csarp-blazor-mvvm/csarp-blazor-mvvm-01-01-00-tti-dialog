@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace TTIProject.Client.ViewModels.BaseClass
+namespace ViewModels.BaseClass
 {
     public class IBetegViewModel
     {
